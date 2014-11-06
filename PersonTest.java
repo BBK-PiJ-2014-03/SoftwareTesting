@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 
 public class PersonTest {
     
-    /* @Test
+    @Test
     public void testsNormalName() {
         Person first = new Person();
         String input1 = "Dereck Robert Yssirt";
@@ -13,9 +13,7 @@ public class PersonTest {
         
         Person second = new Person();
         String input2 = "Roger      Smith           Johnson";
-        System.out.println(input2);
         String output2 = second.getInitials(input2);
-        System.out.println(output2);
         String expected2 = "RSJ";
         assertEquals(output2, expected2);
     }
@@ -25,9 +23,7 @@ public class PersonTest {
     public void testWhiteSpaceName() {
         Person third = new Person();
         String input3 = "I  J  W";
-        System.out.println(input3);
         String output3 = third.getInitials(input3);
-        System.out.println(output3);
         String expected3 = "IJW";
         assertEquals(output3, expected3);
     }
@@ -48,7 +44,7 @@ public class PersonTest {
         String output5 = fifth.getInitials(input5);
         String expected5 = "";
         assertEquals(output5, expected5);
-    } */
+    }
     
     @Test
     public void testLeadingWhiteSpace() {
@@ -57,5 +53,14 @@ public class PersonTest {
         String output6 = sixth.getInitials(input6);
         String expected6 = "TR";
         assertEquals(output6, expected6);
+    }
+    
+    @Test
+    public void testTrailingWhiteSpace() {
+        Person seventh = new Person();
+        String input7 = "Tom Rogers              ";
+        String output7 = seventh.getInitials(input7);
+        String expected7 = "TR";
+        assertEquals(output7, expected7);
     }
 }
